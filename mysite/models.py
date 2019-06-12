@@ -5,6 +5,7 @@ class Instructor(models.Model):
     identification = models.CharField(max_length = 12)
     rank = models.CharField(max_length = 2)
     name = models.CharField(max_length = 40)
+    room = models.ForeignKey(Room, on_delete=models.SET_NULL, default = None, blank = True, null = True)
 
     def __str__(self):
         return self.name
